@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header class="header">
+		<h1>TODO App</h1>
+	</header>
+
+	<main class="container">
+		<h1>Main</h1>
+
+		<form>
+			<div class="separator todo-name__container">
+				<label for="todo-name">TO DO:</label> <br />
+				<input type="text" class="form-control" name="todo-name" id="todo-name" placeholder="TO DO" />
+			</div>
+
+			<div class="separator todo-description__container">
+				<label for="todo-description">Description:</label> <br />
+				<textarea class="form-control" name="todo-description" id="todo-description" placeholder="Description of TODO..."></textarea>
+			</div>
+
+			<div class="separator todo-priority__container">
+				<label for="todo-priority">Priority:</label> <br />
+				<select class="form-control" name="todo-priority" id="todo-priority" placeholder="Priority">
+					<option id="priority-top" value="top">TOP</option>
+					<option id="priority-medium" value="medium">MEDIUM</option>
+					<option id="priority-low" value="low">LOW</option>
+				</select>
+			</div>
+
+			<div class="button__container">
+				<button>Create TODO</button>
+			</div>
+		</form>
+	</main>
+
+	<footer class="footer">
+		<h1>Footer</h1>
+	</footer>
+
+	<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
