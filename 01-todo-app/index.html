@@ -15,7 +15,7 @@
 	<main class="container">
 		<h1>Main</h1>
 
-		<form>
+		<form id="todo-form">
 			<div class="separator todo-name__container">
 				<label for="todo-name">TO DO:</label> <br />
 				<input type="text" class="form-control" name="todo-name" id="todo-name" placeholder="TO DO" />
@@ -29,6 +29,7 @@
 			<div class="separator todo-priority__container">
 				<label for="todo-priority">Priority:</label> <br />
 				<select class="form-control" name="todo-priority" id="todo-priority" placeholder="Priority">
+					<option id="priority-none" value="" default>-- Select a priority --</option>
 					<option id="priority-top" value="top">TOP</option>
 					<option id="priority-medium" value="medium">MEDIUM</option>
 					<option id="priority-low" value="low">LOW</option>
@@ -36,7 +37,11 @@
 			</div>
 
 			<div class="button__container">
-				<button>Create TODO</button>
+				<button id="todo-create" onclick="addToDo(event)">Create TODO</button>
+			</div>
+
+			<div class="button__container">
+				<button id="todos-get">Get TODOs</button>
 			</div>
 		</form>
 	</main>
@@ -45,6 +50,6 @@
 		<h1>Footer</h1>
 	</footer>
 
-	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="module" src="./js/main.js"></script>
 </body>
 </html>
