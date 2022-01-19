@@ -1,54 +1,45 @@
 // Square code
 console.group("Square");
 
-const squareSide = 5;
-console.log(`Sides = ${squareSide}cm`);
+const squarePerimeter = side => {
+  return side * 4;
+}
 
-const squarePerimeter = squareSide * 4;
-console.log(`Perimeter = ${squarePerimeter}cm`);
-
-const squareArea = squareSide ** 2;
-console.log(`Area = ${squareArea}cm^2`);
+const squareArea = side => {
+  return side ** 2;
+}
 
 console.groupEnd();
 
 // Triangle code
 console.group("Triangle");
 
-const triangleSideA = 6;
-const triangleSideB = 6;
-const triangleBase = 4;
-const triangleHeight = 5.5;
-console.log(`SideA = ${triangleSideA}cm
-SideB = ${triangleSideB}cm
-Base = ${triangleBase}cm
-Height = ${triangleHeight}cm
-`
-);
+const trianglePerimeter = (side1, side2, base) => {
+  return side1 + side2 + base;
+}
 
-const trianglePerimeter = triangleSideA + triangleSideB + triangleBase;
-console.log(`Perimeter = ${trianglePerimeter}cm`);
-
-const triangleArea = (triangleBase * triangleHeight) / 2;
-console.log(`Area = ${triangleArea}cm^2`);
+const triangleArea = (base, height) => {
+  return (base * height) / 2; 
+}
 
 console.groupEnd();
 
 // Circle code
 console.group("Circle");
 
-const circleRadius = 2;
-console.log(`Radius = ${circleRadius}cm`);
-
-const circleDiameter = circleRadius * 2;
-console.log(`Diameter = ${circleDiameter}cm`);
+const circleDiameter = radius => {
+  return radius * 2;
+}
 
 const PI = Math.PI;
 
-const circlePerimeter = circleDiameter * PI;
-console.log(`Perimeter = ${circlePerimeter}cm`);
+const circlePerimeter = radius => {
+  const diameter = circleDiameter(radius);
+  return diameter * PI;
+}
 
-const circleArea = (circleRadius ** 2) * PI;
-console.log(`Area = ${circleArea}cm^2`);
+const circleArea = radius => {
+  return (radius ** 2) * PI;
+}
 
 console.groupEnd();
