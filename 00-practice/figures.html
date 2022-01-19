@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geometric figures</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometric figures</title>
 </head>
 <body>
+  <header>
     <h1>Geometric figures</h1>
+  </header>
+  <section>
+    <h2>Calculate Square's area and perimeter</h2>
+    <form action="">
+      <label for="squareSide">Square's sides: </label>
+      <input id="squareSide" type="number" name="squareSide" />
 
-    <script type="text/javascript" src="./figures.js"></script>
+      <div class="buttons">
+        <button type="button" onclick="calculateSquarePerimeter()">Calculate perimeter</button>
+        <button type="button" onclick="calculateSquareArea()">Calculate area</button>
+      </div>
+    </form>
+  </section>
+
+  <script type="text/javascript" src="./figures.js"></script>
 </body>
 </html>
