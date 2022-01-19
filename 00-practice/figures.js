@@ -43,3 +43,18 @@ const circleArea = radius => {
 }
 
 console.groupEnd();
+
+// Square <-> HTML
+function getSquareSide() {
+  return document.getElementById('squareSide').value;
+}
+
+function calculateSquarePerimeter() {
+  const squareSide = getSquareSide();
+  return squarePerimeter(squareSide);
+}
+
+function calculateSquareArea() {
+  const squareSide = getSquareSide();
+  return squareArea(squareSide);
+}
