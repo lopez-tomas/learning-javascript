@@ -1,6 +1,5 @@
+// # Geometric figures functions #
 // Square code
-console.group("Square");
-
 const squarePerimeter = side => {
   return side * 4;
 }
@@ -9,11 +8,7 @@ const squareArea = side => {
   return side ** 2;
 }
 
-console.groupEnd();
-
 // Triangle code
-console.group("Triangle");
-
 const trianglePerimeter = (side1, side2, base) => {
   return side1 + side2 + base;
 }
@@ -22,11 +17,7 @@ const triangleArea = (base, height) => {
   return (base * height) / 2; 
 }
 
-console.groupEnd();
-
 // Circle code
-console.group("Circle");
-
 const circleDiameter = radius => {
   return radius * 2;
 }
@@ -42,8 +33,7 @@ const circleArea = radius => {
   return (radius ** 2) * PI;
 }
 
-console.groupEnd();
-
+// # Geometric figures <-> HTML #
 // Square <-> HTML
 function getSquareSide() {
   return parseFloat(document.getElementById('squareSide').value);
@@ -96,4 +86,30 @@ function calculateTriangleArea() {
 
   alert(triangleArea(base, height));
   return triangleArea(base, height);
+}
+
+// Circle <-> HTML
+function getRadius() {
+  return parseFloat(document.getElementById('circleRadius').value);
+}
+
+function calculateCircleDiameter() {
+  const radius = getRadius();
+
+  alert(circleDiameter(radius));
+  return circleDiameter(radius);
+}
+
+function calculateCirclePerimeter() {
+  const perimeter = circleDiameter(getRadius());
+
+  alert(circlePerimeter(perimeter));
+  return circlePerimeter(perimeter);
+}
+
+function calculateCircleArea() {
+  const radius = getRadius();
+
+  alert(circleArea(radius));
+  return circleArea(radius);
 }
