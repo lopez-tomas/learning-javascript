@@ -7,20 +7,55 @@
   <title>Geometric figures</title>
 </head>
 <body>
-  <header>
+  <section class="geometric-figures">
     <h1>Geometric figures</h1>
-  </header>
-  <section>
-    <h2>Calculate Square's area and perimeter</h2>
-    <form action="">
-      <label for="squareSide">Square's sides: </label>
-      <input id="squareSide" type="number" name="squareSide" />
 
-      <div class="buttons">
-        <button type="button" onclick="calculateSquarePerimeter()">Calculate perimeter</button>
-        <button type="button" onclick="calculateSquareArea()">Calculate area</button>
-      </div>
-    </form>
+    <div class="section square-section">
+      <h2>Squares</h2>
+
+      <form action="">
+        <div class="inputs">
+          <label for="squareSide">Side: </label>
+          <input id="squareSide" type="number" name="squareSide" />
+        </div>
+
+        <div class="buttons">
+          <button type="button" onclick="calculateSquarePerimeter()">Calculate perimeter</button>
+          <button type="button" onclick="calculateSquareArea()">Calculate area</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="section triangle-section">
+      <h2>Triangles</h2>
+
+      <form action="">
+        <div class="inputs">
+          <label for="triangleSideA">SideA: </label>
+          <input id="triangleSideA" type="number" name="triangleSideA" />
+        </div>
+
+        <div class="inputs">
+          <label for="triangleSideB">SideB: </label>
+          <input id="triangleSideB" type="number" name="triangleSideB" />
+        </div>
+
+        <div class="inputs">
+          <label for="triangleBase">Base: </label>
+          <input id="triangleBase" type="number" name="triangleSideB" />
+        </div>
+
+        <div class="inputs">
+          <label for="triangleHeight">Height: </label>
+          <input id="triangleHeight" type="number" name="triangleBase" />
+        </div>
+
+        <div class="buttons">
+          <button type="button" onclick="calculateTrianglePerimeter()">Calculate perimeter</button:button>
+          <button type="button" onclick="calculateTriangleArea()">Calculate area</button:button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <script type="text/javascript" src="./figures.js"></script>
