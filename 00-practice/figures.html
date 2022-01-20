@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Quicksand font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <title>Geometric figures</title>
+  <link rel="stylesheet" href="./css/figures.css">
 </head>
 <body>
   <section class="geometric-figures">
@@ -19,11 +31,20 @@
           <input id="squareSide" type="number" name="squareSide" />
         </div>
 
-        <div class="buttons">
-          <button type="button" onclick="calculateSquarePerimeter()">Calculate perimeter</button>
-          <button type="button" onclick="calculateSquareArea()">Calculate area</button>
+        <div class="inputs">
+          <label for="triangleUnity">Unity: </label>
+          <select id="triangleUnity" name="triangleUnity">
+            <option value="">cm</option>
+            <option value="">mm</option>
+            <option value="">km</option>
+          </select>
         </div>
       </form>
+
+      <div class="buttons">
+        <button type="button" onclick="calculateSquarePerimeter()">Calculate perimeter</button>
+        <button type="button" onclick="calculateSquareArea()">Calculate area</button>
+      </div>
     </div>
 
     <div class="section triangle-section">
@@ -45,12 +66,21 @@
           <input id="triangleBase" type="number" name="triangleSideB" />
         </div>
 
-        <div class="buttons">
-          <button type="button" onclick="calculateTriangleHeight()">Calculate height</button:button>
-          <button type="button" onclick="calculateTrianglePerimeter()">Calculate perimeter</button:button>
-          <button type="button" onclick="calculateTriangleArea()">Calculate area</button:button>
+        <div class="inputs">
+          <label for="triangleUnity">Unity: </label>
+          <select id="triangleUnity" name="triangleUnity">
+            <option value="">cm</option>
+            <option value="">mm</option>
+            <option value="">km</option>
+          </select>
         </div>
       </form>
+
+      <div class="buttons">
+        <button type="button" onclick="calculateTriangleHeight()">Calculate height</button:button>
+        <button type="button" onclick="calculateTrianglePerimeter()">Calculate perimeter</button:button>
+        <button type="button" onclick="calculateTriangleArea()">Calculate area</button:button>
+      </div>
     </div>
 
     <div class="section circle-section">
@@ -62,12 +92,21 @@
           <input id="circleRadius" type="number" name="circleRadius" />
         </div>
 
-        <div class="buttons">
-          <button type="button" onclick="calculateCircleDiameter()">Calculate diameter</button>
-          <button type="button" onclick="calculateCirclePerimeter()">Calculate perimeter</button>
-          <button type="button" onclick="calculateCircleArea()">Calculate area</button>
+        <div class="inputs">
+          <label for="triangleUnity">Unity: </label>
+          <select id="triangleUnity" name="triangleUnity">
+            <option value="">cm</option>
+            <option value="">mm</option>
+            <option value="">km</option>
+          </select>
         </div>
       </form>
+
+      <div class="buttons">
+        <button type="button" onclick="calculateCircleDiameter()">Calculate diameter</button>
+        <button type="button" onclick="calculateCirclePerimeter()">Calculate perimeter</button>
+        <button type="button" onclick="calculateCircleArea()">Calculate area</button>
+      </div>
     </div>
   </section>
 
