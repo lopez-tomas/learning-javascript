@@ -1,0 +1,116 @@
+
+@use 'modules/global'
+@use 'modules/fonts'
+@use 'modules/colors'
+
+$border: 4px
+$separation: 8px
+$bigSeparation: $separation * 2
+$buttonPadding: 10px
+
+body
+    @include global.global
+    background-color: colors.$body-background-color
+
+h1, h2
+    margin: 0
+
+.geometric-figures
+    display: grid
+    grid-template-areas: ". title ." "squares triangles circles"
+    grid-template-columns: repeat(3, auto)
+    grid-template-rows: auto 1fr
+    place-items: center
+
+    h1
+        grid-area: title
+        padding: $bigSeparation
+        font-size: fonts.$lg + .5rem
+        color: colors.$white
+
+    .section, .buttons
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    .square-section
+        grid-area: squares
+
+    .triangle-section
+        grid-area: triangles
+
+    .circle-section
+        grid-area: circles
+
+.section
+    width: 100%
+    max-width: 280px
+    border-radius: $separation
+    background-color: colors.$section-background-color
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 30%)
+
+    h2
+        width: 100%
+        padding: $separation 0
+        border-top-left-radius: $separation
+        border-top-right-radius: $separation
+        font-size: fonts.$lg
+        color: colors.$main-color
+        background-color: colors.$subtitle-background-color
+        text-align: center
+
+    form
+        width: 80%
+        margin: $bigSeparation 0
+
+        .inputs
+            width: 100%
+            color: colors.$white
+            display: grid
+            grid-template-columns: 1fr auto
+            place-items: center
+            margin-bottom: $separation
+
+            label
+                justify-self: flex-start
+                font-size: fonts.$md
+                font-weight: bold
+
+            input, select
+                max-width: 140px
+                padding: $separation
+                border: 1px solid colors.$input-border-color
+                border-radius: $border
+                font-size: fonts.$sm
+                color: colors.$white
+                background-color: colors.$input-background-color
+
+    .buttons
+        width: 80%
+
+        button
+            width: 100%
+            margin-bottom: $separation
+            padding: $buttonPadding
+            border: 0
+            border-radius: 16px
+
+            font-size: fonts.$sm
+            font-weight: bold
+            color: colors.$main-color
+            background-color: colors.$body-background-color
+            cursor: pointer
+
+            &:hover, &:hover
+                color: colors.$body-background-color
+                background-color: colors.$main-color
+
+            &:last-child
+                margin-bottom: $separation
+
+@media (max-width: 900px)
+    .geometric-figures
+        grid-template-areas: ". title ." ". squares ." ". triangles ." ". circles ."
+
+        .section
+            margin: $bigSeparation 0
