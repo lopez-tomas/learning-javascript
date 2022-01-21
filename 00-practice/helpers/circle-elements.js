@@ -1,3 +1,6 @@
+const circleSection = document.querySelector('.circle-section');
+const circleButton = document.getElementById('circle');
+
 const circleRadius = document.getElementById('circleRadius');
 
 const circleDiameterButton = document.getElementById('circleDiameter');
@@ -18,11 +21,13 @@ function getCircleUnit() {
 }
 
 export {
-    getRadius,
-    getCircleUnit,
-    circleRadius,
-    circleDiameterButton,
-    circlePerimeterButton,
-    circleAreaButton,
-    circleResult
+  getRadius,
+  getCircleUnit,
+  circleSection,
+  circleButton,
+  circleRadius,
+  circleDiameterButton,
+  circlePerimeterButton,
+  circleAreaButton,
+  circleResult
 };
