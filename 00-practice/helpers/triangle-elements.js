@@ -1,3 +1,6 @@
+const triangleSection = document.querySelector('.triangle-section');
+const triangleButton = document.getElementById('triangle');
+
 const triangleSideA = document.getElementById('triangleSideA');
 const triangleSideB = document.getElementById('triangleSideB');
 const triangleBase = document.getElementById('triangleBase');
@@ -31,21 +34,23 @@ function getTriangleUnit() {
 }
 
 function errorTriangleMessage() {
-    triangleResult.style.color = "red";
-    triangleResult.innerText = "That triangle doesn't exist.";
+  triangleResult.style.color = "red";
+  triangleResult.innerText = "That triangle doesn't exist.";
 }
 
 export {
-    getSides,
-    getTriangleUnit,
-    triangleSideA,
-    triangleSideB,
-    triangleBase,
-    triangleHeightButton,
-    trianglePerimeterButton,
-    triangleAreaButton,
-    triangleResult,
-    triangleResult2,
-    triangleResult3,
-    errorTriangleMessage
+  getSides,
+  getTriangleUnit,
+  triangleSection,
+  triangleButton,
+  triangleSideA,
+  triangleSideB,
+  triangleBase,
+  triangleHeightButton,
+  trianglePerimeterButton,
+  triangleAreaButton,
+  triangleResult,
+  triangleResult2,
+  triangleResult3,
+  errorTriangleMessage
 };
