@@ -12,7 +12,7 @@ body
     @include global.global
     background-color: colors.$body-background-color
 
-h1, h2
+h1, h2, h3, h4, h5
     margin: 0
 
 .geometric-figures
@@ -101,12 +101,31 @@ h1, h2
             background-color: colors.$body-background-color
             cursor: pointer
 
-            &:hover, &:hover
+            &:last-child
+                margin-bottom: $separation
+
+        .hover
+            &:hover
                 color: colors.$body-background-color
                 background-color: colors.$main-color
 
-            &:last-child
-                margin-bottom: $separation
+        .disabled
+            color: colors.$dark
+            background-color: #ccc
+            cursor: not-allowed
+
+    .result
+        display: block
+
+        h3, h4, h5
+            padding: $separation
+            font-size: fonts.$md
+            color: colors.$white
+
+        h4, h5
+            display: none
+            font-size: fonts.$sm
+            color: red
 
 @media (max-width: 900px)
     .geometric-figures
