@@ -33,6 +33,7 @@ import {
 import {
   getSquareSide,
   getSquareUnit,
+  squareButton,
   squareSide,
   squarePerimeterButton,
   squareAreaButton,
@@ -50,6 +51,7 @@ squareAreaButton.addEventListener("click", calculateSquareArea);
 import {
   getSides,
   getTriangleUnit,
+  triangleButton,
   triangleSideA,
   triangleSideB,
   triangleBase,
@@ -76,6 +78,7 @@ triangleAreaButton.addEventListener("click", calculateTriangleArea);
 import {
   getRadius,
   getCircleUnit,
+  circleButton,
   circleRadius,
   circleDiameterButton,
   circlePerimeterButton,
@@ -88,6 +91,15 @@ circleRadius.oninput = handleInputCircleRadius;
 circleDiameterButton.addEventListener('click', calculateCircleDiameter);
 circlePerimeterButton.addEventListener('click', calculateCirclePerimeter);
 circleAreaButton.addEventListener('click', calculateCircleArea);
+
+/*
+  Getting geometric figures sections & header buttons to change display of each sections
+*/
+import { showSquareSection, showTriangleSection, showCircleSection } from './helpers/show-sections.js';
+
+squareButton.onclick = showSquareSection;
+triangleButton.onclick = showTriangleSection;
+circleButton.onclick = showCircleSection;
 
 
 // # Connecting HTML with JavaScript #
