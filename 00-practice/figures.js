@@ -1,174 +1,135 @@
-// # Geometric figures functions #
-// Square code
-const squarePerimeter = side => {
-  return side * 4;
-};
+// # Imports and setting properties for each geometric figures #
+/*
+  Figures base functions
+*/
+import {
+  squarePerimeter,
+  squareArea,
+  triangleExists,
+  trianglePerimeter,
+  circleDiameter,
+  circlePerimeter,
+  circleArea,
+  result,
+  triangleTypeBySide,
+  triangleHeightByType,
+  triangleAreaByType
+} from './helpers/base-functions.js';
 
-const squareArea = side => {
-  return side ** 2;
-};
+/*
+  Inputs handlers
+*/
+import {
+  handleInputSquareSide,
+  handleInputTriangleSideA,
+  handleInputTriangleSideB,
+  handleInputTriangleBase,
+  handleInputCircleRadius
+} from './helpers/inputs-handler.js';
 
-// Triangle code
-const triangleExists = (side1, side2, base) => {
-  return (
-    side1 + side2 > base &&
-    side1 + base > side2 &&
-    side2 + base > side1
-  );
-}
+/*
+  Importing square elements & setting properties
+*/
+import {
+  getSquareSide,
+  getSquareUnit,
+  squareSide,
+  squarePerimeterButton,
+  squareAreaButton,
+  squareResult
+} from './helpers/square-elements.js';
 
-const trianglePerimeter = (side1, side2, base) => {
-  return side1 + side2 + base;
-};
+squareSide.oninput = handleInputSquareSide;
 
-const triangleArea = (base, height) => {
-  return (base * height) / 2; 
-};
+squarePerimeterButton.addEventListener("click", calculateSquarePerimeter);
+squareAreaButton.addEventListener("click", calculateSquareArea);
 
-// Equilateral
-const equilateralTriangleHeight = side => {
-  const squaredSide = side ** 2;
-  const squaredNewBase = (side / 2) ** 2;
-  let height = Math.sqrt(squaredSide - squaredNewBase);
-  console.log(height);
+/*
+  Importing triangle elements & setting properties
+*/
+import {
+  getSides,
+  getTriangleUnit,
+  triangleSideA,
+  triangleSideB,
+  triangleBase,
+  triangleHeightButton,
+  trianglePerimeterButton,
+  triangleAreaButton,
+  triangleResult,
+  //triangleResult2,
+  //triangleResult3,
+  errorTriangleMessage
+} from './helpers/triangle-elements.js';
 
-  return height;
-};
+triangleSideA.oninput = handleInputTriangleSideA;
+triangleSideB.oninput = handleInputTriangleSideB;
+triangleBase.oninput = handleInputTriangleBase;
 
-const equilateralTriangleArea = side => {
-  const height = equilateralTriangleHeight(side);
+triangleHeightButton.addEventListener("click", calculateTriangleHeight);
+trianglePerimeterButton.addEventListener("click", calculateTrianglePerimeter);
+triangleAreaButton.addEventListener("click", calculateTriangleArea);
 
-  return triangleArea(side, height);
-};
+/*
+  Importing circle elements & setting properties
+*/
+import {
+  getRadius,
+  getCircleUnit,
+  circleRadius,
+  circleDiameterButton,
+  circlePerimeterButton,
+  circleAreaButton,
+  circleResult
+} from './helpers/circle-elements.js';
 
-// Isosceles
-const isoscelesTriangleHeight = (side, base) => {
-  const newSquaredBase = (base / 2) ** 2;
-  const squaredSide = side ** 2;
+circleRadius.oninput = handleInputCircleRadius;
 
-  return Math.sqrt(squaredSide - newSquaredBase);
-};
+circleDiameterButton.addEventListener('click', calculateCircleDiameter);
+circlePerimeterButton.addEventListener('click', calculateCirclePerimeter);
+circleAreaButton.addEventListener('click', calculateCircleArea);
 
-const isoscelesTriangleArea = (side, base) => {
-  const height = isoscelesTriangleHeight(side, base);
 
-  return triangleArea(base, height);
-};
-
-// Scalene
-const scaleneTriangleArea = (sideA, sideB, base) => {
-  // heron's formula
-  const semiPerimeter = (sideA + sideB + base) / 2;
-  const firstTerm = semiPerimeter - sideA;
-  const secondTerm = semiPerimeter - sideB;
-  const thirdTerm = semiPerimeter - base;
-
-  return Math.sqrt(semiPerimeter * firstTerm * secondTerm * thirdTerm);
-};
-
-const scaleneTriangleHeight = (sideA, sideB, base) => {
-  const area = scaleneTriangleArea(sideA, sideB, base);
-
-  return (area * 2) / base;
-};
-
-// Circle code
-const circleDiameter = radius => {
-  return radius * 2;
-};
-
-const PI = Math.PI;
-
-const circlePerimeter = radius => {
-  const diameter = circleDiameter(radius);
-  return diameter * PI;
-};
-
-const circleArea = radius => {
-  return (radius ** 2) * PI;
-};
-
-// # Geometric figures <-> HTML #
-// Square <-> HTML
-function getSquareSide() {
-  return parseFloat(document.getElementById('squareSide').value);
-}
-
+// # Connecting HTML with JavaScript #
+/*
+  Interaction with Square section
+*/
 function calculateSquarePerimeter() {
   const squareSide = getSquareSide();
+  const unit = getSquareUnit();
 
-  if (squareSide <= 0) {
-    alert("Side MUST be greather than 0");
-    return;
-  }
-
-  alert(squarePerimeter(squareSide));
-  return squarePerimeter(squareSide);
+  const perimeter = squarePerimeter(squareSide);
+  squareResult.innerText = result(perimeter, unit, false);
 }
 
 function calculateSquareArea() {
   const squareSide = getSquareSide();
+  const unit = getSquareUnit();
 
-  if (squareSide <= 0) {
-    alert("Side MUST be greather than zero.");
-    return;
-  }
-
-  alert(squareArea(squareSide));
-  return squareArea(squareSide);
+  const area = squareArea(squareSide);
+  squareResult.innerText = result(area, unit, true);
 }
 
-// Triangle <-> HTML
-function getSides() {
-  let sides = {};
-  const sideA = parseFloat(document.getElementById('triangleSideA').value);
-  const sideB = parseFloat(document.getElementById('triangleSideB').value);
-  const base = parseFloat(document.getElementById('triangleBase').value);
-
-  sides["sideA"] = sideA;
-  sides["sideB"] = sideB
-  sides["base"] = base;
-
-  return sides;
-}
-
+/*
+  Interaction with Triangle section
+*/
 function calculateTriangleHeight() {
   let height;
   const sides = getSides();
   const sideA = sides["sideA"];
   const sideB = sides["sideB"];
   const base = sides["base"];
-
-  if (sideA <= 0 || sideB <= 0 || base <= 0) {
-    alert("ALL sides MUST be greater than zero.");
-    return;
-  }
+  const unit = getTriangleUnit();
+  const type = triangleTypeBySide(sideA, sideB, base);
 
   if (!triangleExists(sideA, sideB, base)) {
-    alert("That triangle doesn't exist.");
+    errorTriangleMessage();
     return;
   }
 
-  // Equilateral
-  if (sideA == sideB && sideA == base) {
-    height = equilateralTriangleHeight(sideA);
-  // Isosceles
-  } else if (sideA == sideB && sideA != base) {
-    height = isoscelesTriangleHeight(sideA, base);
+  height = triangleHeightByType(type, sideA, sideB, base);
 
-  } else if (sideB == base && sideB != sideA) {
-    height = isoscelesTriangleHeight(sideB, sideA);
-
-  } else if (base == sideA && base != sideB) {
-    height = isoscelesTriangleHeight(base, sideB);
-
-  // Scalene
-  } else {
-    height = scaleneTriangleHeight(sideA, sideB, base);
-  }
-
-  alert(height);
-  return height;
+  triangleResult.innerText = result(height, unit, false);
 }
 
 function calculateTrianglePerimeter() {
@@ -176,19 +137,15 @@ function calculateTrianglePerimeter() {
   const sideA = sides["sideA"];
   const sideB = sides["sideB"];
   const base = sides["base"];
-
-  if (sideA <= 0 || sideB <= 0 || base <= 0) {
-    alert("ALL sides MUST be greater than zero.");
-    return;
-  }
+  const unit = getTriangleUnit();
 
   if (!triangleExists(sideA, sideB, base)) {
-    alert("That triangle doesn't exist.");
+    errorTriangleMessage();
     return;
   }
 
-  alert(trianglePerimeter(sideA, sideB, base));
-  return trianglePerimeter(sideA, sideB, base);
+  const perimeter = trianglePerimeter(sideA, sideB, base);
+  triangleResult.innerText = result(perimeter, unit, false);
 }
 
 function calculateTriangleArea() {
@@ -197,76 +154,44 @@ function calculateTriangleArea() {
   const sideA = sides["sideA"];
   const sideB = sides["sideB"];
   const base = sides["base"];
-
-  if (sideA <= 0 || sideB <= 0 || base <= 0) {
-    alert("ALL sides MUST be greater than zero.");
-    return;
-  }
+  const unit = getTriangleUnit();
+  const type = triangleTypeBySide(sideA, sideB, base);
 
   if (!triangleExists(sideA, sideB, base)) {
-    alert("That triangle doesn't exist.");
+    errorTriangleMessage();
     return;
   }
 
-  // Equilateral
-  if (sideA == sideB && sideA == base) {
-    area = equilateralTriangleArea(sideA);
-  // Isosceles
-  } else if (sideA == sideB && sideA != base) {
-    area = isoscelesTriangleArea(sideA, base);
+  area = triangleAreaByType(type, sideA, sideB, base);
 
-  } else if (sideB == base && sideB != sideA) {
-    area = isoscelesTriangleArea(sideB, sideA);
-
-  } else if (base == sideA && base != sideB) {
-    area = isoscelesTriangleArea(base, sideB);
-
-  // Scalene
-  } else {
-    area = scaleneTriangleArea(sideA, sideB, base);
-  }
-
-  alert(area);
-  return area;
+  triangleResult.innerText = result(area, unit, true);
 }
 
-// Circle <-> HTML
-function getRadius() {
-  return parseFloat(document.getElementById('circleRadius').value);
-}
-
+/*
+  Interaction with Circle section
+*/
 function calculateCircleDiameter() {
   const radius = getRadius();
+  const unit = getCircleUnit();
 
-  if (radius <= 0) {
-    alert("Radius MUST be greater than zero.");
-    return 0;
-  }
+  const diameter = circleDiameter(radius);
+  circleResult.innerText = result(diameter, unit, false);
 
-  alert(circleDiameter(radius));
-  return circleDiameter(radius);
+  return 0;
 }
 
 function calculateCirclePerimeter() {
   const diameter = circleDiameter(getRadius());
+  const unit = getCircleUnit();
 
-  if (diameter <= 0) {
-    alert("Radius MUST be greater than zero.");
-    return;
-  }
-
-  alert(circlePerimeter(diameter));
-  return circlePerimeter(diameter);
+  const perimeter = circlePerimeter(diameter);
+  circleResult.innerText = result(perimeter, unit, false);
 }
 
 function calculateCircleArea() {
   const radius = getRadius();
+  const unit = getCircleUnit();
 
-  if (radius <= 0) {
-    alert("Radius MUST be greater than zero.");
-    return;
-  }
-
-  alert(circleArea(radius));
-  return circleArea(radius);
+  const area = circleArea(radius);
+  circleResult.innerText = result(area, unit, true);
 }
