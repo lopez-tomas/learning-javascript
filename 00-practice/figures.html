@@ -19,97 +19,121 @@
   <link rel="stylesheet" href="./css/figures.css">
 </head>
 <body>
+  <!-- Figures START -->
   <section class="geometric-figures">
     <h1>Geometric figures</h1>
 
+    <!-- Squares START -->
     <div class="section square-section">
       <h2>Squares</h2>
 
       <form action="">
         <div class="inputs">
           <label for="squareSide">Side: </label>
-          <input id="squareSide" type="number" name="squareSide" />
+          <input id="squareSide" type="number" name="squareSide" min="1" />
         </div>
 
         <div class="inputs">
-          <label for="triangleUnity">Unity: </label>
-          <select id="triangleUnity" name="triangleUnity">
-            <option value="">cm</option>
-            <option value="">mm</option>
-            <option value="">km</option>
+          <label for="squareUnit">Unit: </label>
+          <select id="squareUnit" name="squareUnit">
+            <option value="cm" selected>cm</option>
+            <option value="mm">mm</option>
+            <option value="km">km</option>
           </select>
         </div>
       </form>
 
       <div class="buttons">
-        <button type="button" onclick="calculateSquarePerimeter()">Calculate perimeter</button>
-        <button type="button" onclick="calculateSquareArea()">Calculate area</button>
+        <button id="squarePerimeter" class="hover" type="button">Calculate perimeter</button>
+        <button id="squareArea" class="hover" type="button">Calculate area</button>
+      </div>
+
+      <div class="result">
+        <h3 id="squareResult"></h3>
       </div>
     </div>
+    <!-- Squares END -->
 
+    <!-- Triangles START -->
     <div class="section triangle-section">
       <h2>Triangles</h2>
 
       <form action="">
         <div class="inputs">
           <label for="triangleSideA">SideA: </label>
-          <input id="triangleSideA" type="number" name="triangleSideA" />
+          <input id="triangleSideA" type="number" name="triangleSideA" min="1"/>
         </div>
 
         <div class="inputs">
           <label for="triangleSideB">SideB: </label>
-          <input id="triangleSideB" type="number" name="triangleSideB" />
+          <input id="triangleSideB" type="number" name="triangleSideB" min="1" />
         </div>
 
         <div class="inputs">
           <label for="triangleBase">Base: </label>
-          <input id="triangleBase" type="number" name="triangleSideB" />
+          <input id="triangleBase" type="number" name="triangleSideB" min="1"/>
         </div>
 
         <div class="inputs">
-          <label for="triangleUnity">Unity: </label>
-          <select id="triangleUnity" name="triangleUnity">
-            <option value="">cm</option>
-            <option value="">mm</option>
-            <option value="">km</option>
+          <label for="triangleUnit">Unit: </label>
+          <select id="triangleUnit" name="triangleUnit">
+            <option value="cm" selected>cm</option>
+            <option value="mm">mm</option>
+            <option value="km">km</option>
           </select>
         </div>
       </form>
 
       <div class="buttons">
-        <button type="button" onclick="calculateTriangleHeight()">Calculate height</button:button>
-        <button type="button" onclick="calculateTrianglePerimeter()">Calculate perimeter</button:button>
-        <button type="button" onclick="calculateTriangleArea()">Calculate area</button:button>
+        <button id="triangleHeight" class="hover" type="button">Calculate height</button:button>
+        <button id="trianglePerimeter" class="hover" type="button">Calculate perimeter</button:button>
+        <button id="triangleArea" class="hover" type="button">Calculate area</button:button>
+      </div>
+
+      <div class="result">
+        <h3 id="triangleResult"></h3>
+        <h4 id="triangleResult2"></h3>
+        <h5 id="triangleResult3"></h3>
       </div>
     </div>
+    <!-- Triangles END -->
 
+    <!-- Circles START -->
     <div class="section circle-section">
       <h2>Circles</h2>
 
       <form action="">
         <div class="inputs">
           <label for="circleRadius">Radius: </label>
-          <input id="circleRadius" type="number" name="circleRadius" />
+          <input id="circleRadius" type="number" name="circleRadius" min="1" />
         </div>
 
         <div class="inputs">
-          <label for="triangleUnity">Unity: </label>
-          <select id="triangleUnity" name="triangleUnity">
-            <option value="">cm</option>
-            <option value="">mm</option>
-            <option value="">km</option>
+          <label for="circleUnit">Unit: </label>
+          <select id="circleUnit" name="circleUnit">
+            <option value="cm" selected>cm</option>
+            <option value="mm">mm</option>
+            <option value="km">km</option>
           </select>
         </div>
       </form>
 
       <div class="buttons">
-        <button type="button" onclick="calculateCircleDiameter()">Calculate diameter</button>
-        <button type="button" onclick="calculateCirclePerimeter()">Calculate perimeter</button>
-        <button type="button" onclick="calculateCircleArea()">Calculate area</button>
+        <button id="circleDiameter" class="hover" type="button">Calculate diameter</button>
+        <button id="circlePerimeter" class="hover" type="button">Calculate perimeter</button>
+        <button id="circleArea" class="hover" type="button">Calculate area</button>
+      </div>
+
+      <div class="result">
+        <h3 id="circleResult"></h3>
+        <h4 id="circleResult2"></h4>
+        <h5 id="circleResult3"></h5>
       </div>
     </div>
+    <!-- Circles END -->
   </section>
+  <!-- Figures END -->
 
-  <script type="text/javascript" src="./figures.js"></script>
+  <script type="module" src="./figures.js"></script>
 </body>
 </html>
