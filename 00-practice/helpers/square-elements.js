@@ -1,3 +1,6 @@
+const squareSection = document.querySelector('.square-section');
+const squareButton = document.getElementById('square');
+
 const squareSide = document.getElementById('squareSide');
 
 const squarePerimeterButton = document.getElementById('squarePerimeter');
@@ -16,10 +19,12 @@ function getSquareUnit() {
 }
 
 export {
-    getSquareSide,
-    getSquareUnit,
-    squareSide,
-    squarePerimeterButton,
-    squareAreaButton,
-    squareResult
+  getSquareSide,
+  getSquareUnit,
+  squareSection,
+  squareButton,
+  squareSide,
+  squarePerimeterButton,
+  squareAreaButton,
+  squareResult
 };
