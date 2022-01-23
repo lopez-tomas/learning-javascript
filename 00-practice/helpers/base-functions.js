@@ -8,6 +8,7 @@ const squareArea = side => {
   return side ** 2;
 };
 
+
 // Triangle code
 const triangleExists = (side1, side2, base) => {
   return (
@@ -16,7 +17,6 @@ const triangleExists = (side1, side2, base) => {
     side2 + base > side1
   );
 };
-
 
 const trianglePerimeter = (side1, side2, base) => {
   return side1 + side2 + base;
@@ -71,6 +71,7 @@ const scaleneTriangleHeight = (sideA, sideB, base) => {
   return (area * 2) / base;
 };
 
+
 // Circle code
 const circleDiameter = radius => {
   return radius * 2;
@@ -94,6 +95,7 @@ function result(value, unit, isSquare) {
     return `${value}${unit}`;
   }
 }
+
 
 const triangleTypeBySide = (sideA, sideB, base) => {
   // Equilateral
