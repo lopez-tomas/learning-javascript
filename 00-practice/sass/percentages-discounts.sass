@@ -1,0 +1,148 @@
+@use 'modules/global'
+@use 'modules/fonts'
+@use 'modules/colors'
+
+$border: 4px
+$separation: 8px
+$bigSeparation: $separation * 2
+$buttonPadding: 10px
+
+$sectionSize: 330px
+$sectionSize2: 280px
+$inputSize: 155px
+
+body
+    @include global.global
+    background-color: colors.$body-background-color
+    color: colors.$white
+
+h1, h2
+    margin: 0
+
+.percentages-discounts
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 20vh
+    width: 100%
+
+    h1
+        padding: $separation 0
+        font-size: fonts.$lg
+        color: colors.$white
+        text-align: center
+
+.section-container
+    display: grid
+    grid-template-areas: ". section ."
+    place-items: center
+    
+    .section
+        display: flex
+        flex-direction: column
+        align-items: center
+
+.section
+    grid-area: section
+    width: 100%
+    width: $sectionSize
+    //min-width: $sectionSize2
+    border-radius: $separation
+    margin-bottom: $bigSeparation
+    background-color: colors.$section-background-color
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 30%)
+
+    h2
+        width: 100%
+        padding: $separation 0
+        border-top-left-radius: $separation
+        border-top-right-radius: $separation
+        font-size: fonts.$lg
+        color: colors.$main-color
+        background-color: colors.$subtitle-background-color
+        text-align: center
+
+    form
+        width: 80%
+        margin: $bigSeparation 0
+
+        .inputs
+            display: grid
+            grid-template-columns: 1fr auto
+            place-items: center
+            width: 100%
+            margin-bottom: $separation
+            color: colors.$white
+
+            label
+                justify-self: flex-start
+                font-size: fonts.$md
+                font-weight: bold
+
+            input
+                max-width: $inputSize
+                padding: $separation
+                border: 1px solid colors.$input-border-color
+                border-radius: $border
+                font-size: fonts.$sm
+                color: colors.$white
+                background-color: colors.$input-background-color
+              
+        p#resultCoupon
+            display: none
+            font-weight: bold
+
+        .valid
+            color: green
+
+        .invalid
+            color: red
+
+    .buttons
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 80%
+
+        button
+            width: 100%
+            padding: $buttonPadding
+            border: 0
+            border-radius: 16px
+            font-size: fonts.$sm
+            font-weight: bold
+            color: colors.$main-color
+            background-color: colors.$body-background-color
+            cursor: pointer
+
+        .hover
+            &:hover
+                color: colors.$body-background-color
+                background-color: colors.$main-color
+
+        .disabled
+            color: colors.$dark
+            background-color: #ccc
+            cursor: not-allowed
+
+    .result
+        display: block
+        padding: $separation
+        font-size: fonts.$lg
+        font-weight: bold
+
+@media (max-width: 410px)
+    .section
+        max-width: $sectionSize2
+        form
+            .inputs
+                grid-template-areas: "label ." "input input"
+                place-items: start
+
+                label
+                    grid-area: label
+
+                input
+                    grid-area: input
+                    margin-top: $border
+                    //min-width: 100%
