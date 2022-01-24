@@ -26,6 +26,10 @@ function getCoupon() {
   return document.getElementById('coupon').value;
 }
 
+function isCouponValid(coupon) {
+  return coupons.find(e => e.name === coupon.toLowerCase());
+}
+
 function priceWithDiscount(price, discount) {
   const percentageToPay = 100 - discount;
   const priceWithDiscount = (price * percentageToPay) / 100;
@@ -33,11 +37,22 @@ function priceWithDiscount(price, discount) {
   return priceWithDiscount;
 }
 
-function isCouponValid(coupon) {
-  return coupons.find(e => e.name === coupon.toLowerCase());
-}
-
+let resultCoupon = document.getElementById('resultCoupon');
 let resultPrice = document.getElementById('resultPrice');
+
+function couponMessage(isValid, coupon, discount) {
+  resultCoupon.style.display = "block";
+
+  if (!isValid) {
+    resultCoupon.classList.add("invalid");
+    resultCoupon.classList.remove("valid");
+    resultCoupon.innerText = `"${coupon}" is not a valid coupon.`;
+  } else {
+    resultCoupon.classList.add("valid");
+    resultCoupon.classList.remove("invalid");
+    resultCoupon.innerText = `"${coupon}" (-${discount}%) coupon applied!`;
+  }
+}
 
 function calculatePriceWithDiscount() {
   const price = getPrice();
@@ -49,9 +64,9 @@ function calculatePriceWithDiscount() {
 
     if (coupon != undefined) {
       discount += coupon.discount;
-      resultCoupon.innerText = `"${coupon.name}" (-${coupon.discount}%) coupon applied!`;
+      couponMessage(true, coupon.name, coupon.discount);
     } else {
-      resultCoupon.innerText = `"${couponToEvaluate}" is not a valid coupon.`;
+      couponMessage(false, couponToEvaluate, discount);
     }
   }
 
