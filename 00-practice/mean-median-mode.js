@@ -44,6 +44,22 @@ function arithmeticMean(list) {
   return mean;
 }
 
+function geometricMean(list) {
+  const productList = list.reduce((prev, next) => prev * next);
+  const listLength = list.length;
+
+  const mean = productList ** (1 / listLength);
+  return mean;
+}
+
+function harmonicMean(list) {
+  const inverseSumList = list.reduce((prev, next) => (1/prev) + (1/next));
+  const listLength = list.length;
+
+  const mean = listLength / inverseSumList;
+  return mean;
+}
+
 function isEven(number) {
   if (number % 2 === 0) {
     return true;
