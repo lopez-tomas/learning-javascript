@@ -7,6 +7,9 @@ $separation: 8px
 $bigSeparation: $separation * 2
 $buttonPadding: 10px
 
+$sectionSize: 280px
+$inputSize: 140px
+
 body
     @include global.global
     background-color: colors.$body-background-color
@@ -78,7 +81,7 @@ button
 
 .section
     width: 100%
-    max-width: 280px
+    max-width: $sectionSize
     border-radius: $separation
     margin-bottom: $bigSeparation
     background-color: colors.$section-background-color
@@ -112,7 +115,7 @@ button
                 font-weight: bold
 
             input, select
-                max-width: 140px
+                max-width: $inputSize
                 padding: $separation
                 border: 1px solid colors.$input-border-color
                 border-radius: $border
