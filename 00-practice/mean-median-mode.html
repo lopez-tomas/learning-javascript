@@ -19,9 +19,88 @@
   <!--<link rel="stylesheet" href="./css/percentages-discounts.css">-->
 </head>
 <body>
+  <!-- Select an option START -->
   <header class="mean-median-mode">
     <h1>Mean, Median and Mode</h1>
+    
+    <div>
+      <button id="mean">Mean</button>
+
+      <button id="median">Median</button>
+
+      <button id="mode">Mode</button>
+    </div>
   </header>
+  <!-- Select an option END -->
+  
+  <!-- Options START -->
+  <section class="container">
+    <!-- Mean START -->
+    <div class="section mean-section">
+      <h2>Mean</h2>
+      
+      <form action="">
+        <div class="inputs">
+          <label for="meanList">List: </label>
+          <input id="meanList" type="text" name="meanList">
+        </div>
+      </form>
+      
+      <div class="buttons">
+        <button id="arithmetic" class="hover" type="button">Arithmetic Mean</button>
+        <button id="geometric" class="hover" type="button">Geometric Mean</button>
+        <button id="harmonic" class="hover" type="button">Harmonic Mean</button>
+      </div>
+      
+      <div class="result">
+        <p id="meanResult"></p>
+      </div>
+    </div>
+    <!-- Mean END -->
+    
+    <!-- Median START -->
+    <div class="section median-section">
+      <h2>Median</h2>
+      
+      <form action="">
+        <div class="inputs">
+          <label for="medianList">List: </label>
+          <input id="medianList" type="text" name="medianList">
+        </div>
+      </form>
+      
+      <div class="buttons">
+        <button id="median" class="hover" type="button">Median</button>
+      </div>
+      
+      <div class="result">
+        <p id="medianResult"></p>
+      </div>
+    </div>
+    <!-- Median END -->
+
+    <!-- Mode START -->
+    <div class="section mode-section">
+      <h2>Mode</h2>
+      
+      <form action="">
+        <div class="inputs">
+          <label for="modeList">List: </label>
+          <input id="modeList" type="text" name="modeList">
+        </div>
+      </form>
+      
+      <div class="buttons">
+        <button id="mode" class="hover" type="button">Mode</button>
+      </div>
+      
+      <div class="result">
+        <p id="modeResult"></p>
+      </div>
+    </div>
+    <!-- Median END -->
+  </section>
+  <!-- Options END -->
   
   <script type="text/javascript" src="./mean-median-mode.js"></script>
 </body>
