@@ -15,3 +15,10 @@ These are my practices with JavaScript taking the Practical Course of JavaScript
 2. Implement the formulas in JavaScript.
 3. Create functions.
 4. Integrate JavaScript with HTML.
+
+## Workshop #2: Mean, Median and Mode
+### Steps:
+1. Define the formulas.
+2. Implement the formulas in JavaScript.
+3. Create functions.
+4. Integrate JavaScript with HTML.
