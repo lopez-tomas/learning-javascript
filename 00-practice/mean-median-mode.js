@@ -7,6 +7,36 @@ const list1 = [
   400000000,
 ];
 
+const list2 = [
+  1,
+  2,
+  3,
+  1,
+  2,
+  3,
+  4,
+  2,
+  2,
+  2,
+  1,
+];
+
+const list3 = [
+  "hola",
+  "hola",
+  "chau",
+  "github",
+  "javascript",
+  "javascript",
+  "hola",
+  "chau",
+  "chau",
+  "chau",
+  "hola",
+  "chau",
+  "hola",
+];
+
 function arithmeticMean(list) {
   const sumList = list.reduce((prev, next) => prev + next, 0);
 
@@ -39,4 +69,27 @@ function median(list) {
   }
 
   return median;
+}
+
+function mode(list) {
+  const countList = {}
+
+  list.map(element => {
+    if (countList[element]) {
+      countList[element]++;
+    } else {
+      countList[element] = 1;
+    }
+  });
+
+  const countListToArray = Object.entries(countList).sort(
+    (prev, next) => {
+      return next[1] - prev[1]
+    }
+  );
+
+  const maxQuantity = countListToArray[0][1];
+  const maxArray = countListToArray.filter(element => element[1] === maxQuantity);
+
+  return maxArray;
 }
