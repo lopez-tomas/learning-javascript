@@ -19,7 +19,35 @@
   <!--<link rel="stylesheet" href="./css/percentages-discounts.css">-->
 </head>
 <body>
-  <h1>Percentages and Discounts</h1>
+  <header>
+    <h1>Percentages and Discounts</h1>
+  </header>
+
+  <section>
+    <h2>Calculate price to pay of your products with discounts</h2>
+
+    <form action="">
+     <div class="inputs">
+       <label for="price">Price: </label>
+       <input id="price" type="number" name="price" placeholder="Original price" />
+     </div>
+
+     <div class="inputs">
+       <label for="discount">Discount: </label>
+       <input id="discount" type="number" name="discount" placeholder="Discount to apply" />
+     </div>
+
+     <div class="inputs">
+       <label for="coupon">Coupon: </label>
+       <input id="coupon" type="text" name="coupon" placeholder="Put your coupon here!" />
+       <p id="resultCoupon"></p>
+     </div>
+
+     <button id="priceWithDiscount" type="button" onclick="calculatePriceWithDiscount()">Calculate price</button>
+    </form>
+
+    <p id="resultPrice"></p>
+  </section>
 
   <script type="text/javascript" src="./percentages-discounts.js"></script>
 </body>
