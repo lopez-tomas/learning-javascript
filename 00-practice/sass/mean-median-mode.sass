@@ -1,0 +1,31 @@
+@use 'modules/global'
+@use 'modules/fonts'
+@use 'modules/colors'
+
+$border: 4px
+$separation: 8px
+$bigSeparation: $separation * 2
+$buttonPadding: 10px
+
+$sectionSize: 280px
+$inputSize: 140px
+
+body
+    @include global.global
+    background-color: colors.$body-background-color
+
+h1, h2
+    margin: 0
+
+button
+    border: 0
+    border-radius: 16px
+    font-size: fonts.$sm
+    font-weight: bold
+    color: colors.$main-color
+    background-color: colors.$body-background-color
+    cursor: pointer
+
+    &:hover
+        color: colors.$body-background-color
+        background-color: colors.$main-color
