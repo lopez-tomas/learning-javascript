@@ -20,12 +20,20 @@
 </head>
 <body>
   <header class="salaries">
-    <h1>ROI</h1>
+    <h1>ROI, Simple & Compound Interest</h1>
+
+    <div>
+      <button id="roi">ROI</button>
+
+      <button id="simple">Simple interest</button>
+
+      <button id="compound">Compound interest</button>
+    </div>
   </header>
 
   <section class="section-container">
-    <!-- Calculator START -->
-    <div class="section">
+    <!-- ROI START -->
+    <div class="section roi-section">
       <h2>Calculate the ROI (Return on Investment) of your project</h2>
 
       <form action="">
@@ -41,18 +49,80 @@
       </form>
 
       <div class="buttons">
-        <button id="roi" class="hover" type="button" onclick="calculateROI()">Calculate ROI</button>
+        <button id="calculateROI" class="hover" type="button" onclick="calculateROI()">Calculate ROI</button>
       </div>
 
       <div class="result">
         <p id="resultROI"></p>
       </div>
     </div>
-    <!-- Calculator END -->
+    <!-- ROI END -->
+
+    <!-- Simple interest START -->
+    <div class="section simple-section">
+      <h2>Calculate the Simple Interest of your investment</h2>
+
+      <form action="">
+        <div class="inputs">
+          <label for="investmentSimple">Investment: </label>
+          <input id="investmentSimple" type="number" name="investmentSimple" placeholder="Your investment">
+        </div>
+
+        <div class="inputs">
+          <label for="interestRate">Interest: </label>
+          <input id="interestRate" type="number" nname="interestRate" placeholder="Anual interest rate">
+        </div>
+
+        <div class="inputs">
+          <label for="years">Years: </label>
+          <input id="years" type="number" nname="years" placeholder="Time (in years)">
+        </div>
+      </form>
+
+      <div class="buttons">
+        <button id="calculateSimple" class="hover" type="button" onclick="calculateSimpleInterest()">Calculate Simple Interest</button>
+      </div>
+
+      <div class="result">
+        <p id="resultSimple"></p>
+      </div>
+    </div>
+    <!-- Simple interest END -->
+
+    <!-- Compound interest START -->
+    <div class="section compound-section">
+      <h2>Calculate the Compound Interest of your investment</h2>
+
+      <form action="">
+        <div class="inputs">
+          <label for="investmentSimple">Investment: </label>
+          <input id="investmentSimple" type="number" name="investmentSimple" placeholder="Your investment">
+        </div>
+
+        <div class="inputs">
+          <label for="interestRateCompound">Interest: </label>
+          <input id="interestRateCompound" type="number" name="interestRateCompound" placeholder="Anual interest rate">
+        </div>
+
+        <div class="inputs">
+          <label for="yearsCompound">Years: </label>
+          <input id="yearsCompound" type="number" name="yearsCompound" placeholder="Time (in years)">
+        </div>
+      </form>
+
+      <div class="buttons">
+        <button id="calculateCompound" class="hover" type="button" onclick="calculateCompoundInterest()">Calculate Compound Interest</button>
+      </div>
+
+      <div class="result">
+        <p id="resultCompound"></p>
+      </div>
+    </div>
+    <!-- Compound interest END -->
   </section>
 
   <script type="text/javascript" src="./roi.js"></script>
   <script type="text/javascript" src="./salaries.js"></script>
-  <script type="text/javascript" src="./analysis.js"></script>
+  <script type="module" src="./analysis.js"></script>
 </body>
 </html>
