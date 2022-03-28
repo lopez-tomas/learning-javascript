@@ -1,3 +1,10 @@
+import { roiButton, simpleButton, compoundButton } from './helpers/salaries-elements.js';
+import { showROISection, showSimpleSection, showCompoundSection } from './helpers/show-sections.js';
+
+roiButton.onclick = showROISection;
+simpleButton.onclick = showSimpleSection;
+compoundButton.onclick = showCompoundSection;
+
 /* HELPERS */
 
 /**
@@ -93,6 +100,9 @@ const salariesTop10COL = obtainTop10SalariesFromList(salariesCOLSorted);
 
 const generalMedian = medianSalaries(salariesCOLSorted);
 const top10Median = medianSalaries(salariesTop10COL);
+
+console.log(salariesCOLSorted);
+console.log(salariesTop10COL);
 
 console.log(
   `The General Median of salaries in Colombia is: $` + generalMedian + ` USD\n` +
