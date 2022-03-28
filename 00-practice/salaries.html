@@ -24,6 +24,31 @@
   </header>
 
   <section class="section-container">
+    <!-- Calculator START -->
+    <div class="section">
+      <h2>Calculate the ROI (Return on Investment) of your project</h2>
+
+      <form action="">
+        <div class="inputs">
+          <label for="return">Return: </label>
+          <input id="return" type="number" name="return" placeholder="Your return" />
+        </div>
+
+        <div class="inputs">
+          <label for="investment">Investment: </label>
+          <input id="investment" type="number" name="investment" placeholder="Your investment">
+        </div>
+      </form>
+
+      <div class="buttons">
+        <button id="roi" class="hover" type="button" onclick="calculateROI()">Calculate ROI</button>
+      </div>
+
+      <div class="result">
+        <p id="resultROI"></p>
+      </div>
+    </div>
+    <!-- Calculator END -->
   </section>
 
   <script type="text/javascript" src="./salaries.js"></script>
