@@ -19,18 +19,53 @@ body
 h1, h2
     margin: 0
 
+button
+    border: 0
+    border-radius: 16px
+    font-size: fonts.$sm
+    font-weight: bold
+    color: colors.$main-color
+    background-color: colors.$body-background-color
+    cursor: pointer
+
+    &:hover
+        color: colors.$body-background-color
+        background-color: colors.$main-color
+
 .salaries
     display: flex
     flex-direction: column
     justify-content: center
     height: 20vh
     width: 100%
+    margin-bottom: $bigSeparation * 2
 
     h1
         padding: $separation 0
         font-size: fonts.$lg
         color: colors.$white
         text-align: center
+
+    div
+        display: inherit
+
+        button
+            height: 15vh
+            width: 100%
+            border-radius: 0
+            border-top: 1px solid colors.$white
+
+            &#roi
+                &:hover
+                    background-color: colors.$squares-button-color
+
+            &#simple
+                &:hover
+                    background-color: colors.$triangles-button-color
+
+            &#compound
+                &:hover
+                    background-color: colors.$circles-button-color
 
 .section-container
     display: grid
@@ -41,6 +76,10 @@ h1, h2
         display: flex
         flex-direction: column
         align-items: center
+
+    .roi-section, .simple-section, .compound-section
+        display: none
+        grid-area: section
 
 .section
     grid-area: section
@@ -87,7 +126,7 @@ h1, h2
                 font-size: fonts.$sm
                 color: colors.$white
                 background-color: colors.$input-background-color
-              
+
     .buttons
         display: flex
         flex-direction: column
