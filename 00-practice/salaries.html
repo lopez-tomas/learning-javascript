@@ -95,13 +95,18 @@
 
       <form action="">
         <div class="inputs">
-          <label for="investmentSimple">Investment: </label>
-          <input id="investmentSimple" type="number" name="investmentSimple" placeholder="Your investment">
+          <label for="investmentCompound">Investment: </label>
+          <input id="investmentCompound" type="number" name="investmentCompound" placeholder="Your investment">
         </div>
 
         <div class="inputs">
           <label for="interestRateCompound">Interest: </label>
           <input id="interestRateCompound" type="number" name="interestRateCompound" placeholder="Anual interest rate">
+        </div>
+
+        <div class="inputs">
+          <label for="compoundings">Compoundings: </label>
+          <input id="compoundings" type="number" name="compoundings" placeholder="Compoundings per period">
         </div>
 
         <div class="inputs">
@@ -122,6 +127,7 @@
   </section>
 
   <script type="text/javascript" src="./roi.js"></script>
+  <script type="text/javascript" src="./interest.js"></script>
   <script type="text/javascript" src="./salaries.js"></script>
   <script type="module" src="./analysis.js"></script>
 </body>

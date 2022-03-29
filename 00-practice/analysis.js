@@ -95,7 +95,7 @@ const medianSalaries = (list) => {
 /* TEST with Colombia list */
 
 const salariesCOL = obtainSalariesFromList(colombia);
-const salariesCOLSorted = salariesCOL.sort((salaryPrev, salaryNext) => salaryPrev - salaryNext);
+const salariesCOLSorted = sortSalaries(salariesCOL);
 const salariesTop10COL = obtainTop10SalariesFromList(salariesCOLSorted);
 
 const generalMedian = medianSalaries(salariesCOLSorted);
