@@ -39,3 +39,18 @@ let lorem2 = `Other epic phrase we need.
 Now, it's other epic phrase.
   `;
 console.log(lorem2);
+
+
+// # Destructuring
+let person = {
+  'name': 'Tomás',
+  'age': 23,
+  'country': 'AR'
+};
+
+// Before ES6
+console.log(person.name, person.age, person.country);
+
+// ES6
+let { name, age } = person;
+console.log(name, age);
