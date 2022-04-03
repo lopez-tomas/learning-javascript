@@ -26,3 +26,16 @@ console.log(epicPhrase);
 // ES6
 let epicPhrase2 = `${hello} ${world}`;
 console.log(epicPhrase2);
+
+
+// # Multiline
+// Before ES6
+let lorem = "Lorem ipsum dolor sit amet, consectet \n"
+  + "other epic phrase we need.";
+console.log(lorem);
+
+// ES6
+let lorem2 = `Other epic phrase we need.
+Now, it's other epic phrase.
+  `;
+console.log(lorem2);
