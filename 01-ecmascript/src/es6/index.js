@@ -134,3 +134,19 @@ let listOfNames2 = names.map(item => console.log(item.name));
 //}
 
 //const square = num => num * num;
+
+
+// # Promises
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (false) {
+      resolve('Hey!');
+    } else {
+      reject('Ups!');
+    }
+  });
+};
+
+helloPromise()
+  .then(response => console.log(response))
+  .catch(error => console.log(error));
