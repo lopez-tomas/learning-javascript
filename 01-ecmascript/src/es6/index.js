@@ -84,3 +84,15 @@ var helloVar = 'hello'; // global variable
 
 console.log(globalVar);
 //console.log(globalLet);
+
+
+// # const
+// Before ES6
+var aVar = 'b';
+aVar = 'a';
+console.log(aVar);
+
+// ES6
+const aConst = 'b';
+aConst = 'a';
+console.log(aConst);
