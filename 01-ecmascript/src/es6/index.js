@@ -54,3 +54,15 @@ console.log(person.name, person.age, person.country);
 // ES6
 let { name, age } = person;
 console.log(name, age);
+
+
+// # Spread Operator
+let team1 = ['Oscar', 'Julian', 'Ricardo'];
+let team2 = ['Valeria', 'Yesica', 'Camila'];
+
+// Before ES6
+let players = ['David', 'Andrea', 'Oscar', 'Julian', 'Ricardo', 'Valeria', 'Yesica', 'Camila'];
+
+// ES6
+let players2 = ['David', 'Andrea', ...team1, ...team2];
+console.log(players2);
