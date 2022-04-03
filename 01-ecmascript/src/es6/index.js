@@ -52,8 +52,8 @@ let person = {
 console.log(person.name, person.age, person.country);
 
 // ES6
-let { name, age } = person;
-console.log(name, age);
+//let { name, age } = person;
+//console.log(name, age);
 
 
 // # Spread Operator
@@ -96,3 +96,16 @@ console.log(aVar);
 const aConst = 'b';
 aConst = 'a';
 console.log(aConst);
+
+
+// # Objects
+let name = "Tomás";
+let age = 23;
+
+// Before ES6
+obj = { name: name, age: age };
+console.log(obj);
+
+// ES6
+obj2 = { name, age };
+console.log(obj2);
