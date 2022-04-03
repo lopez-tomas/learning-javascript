@@ -66,3 +66,21 @@ let players = ['David', 'Andrea', 'Oscar', 'Julian', 'Ricardo', 'Valeria', 'Yesi
 // ES6
 let players2 = ['David', 'Andrea', ...team1, ...team2];
 console.log(players2);
+
+
+// # let & const
+// Before ES6
+var helloVar = 'hello'; // global variable
+
+{
+  var globalVar = "Global VAR";
+}
+
+// ES6
+{
+  let globalLet = "Global LET";
+  console.log(globalLet);
+}
+
+console.log(globalVar);
+//console.log(globalLet);
