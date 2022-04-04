@@ -22,3 +22,8 @@ const promise3 = new Promise((resolve, reject) => resolve("resolve2"));
 
 Promise.allSettled([promise1, promise2, promise3])
   .then(response => console.log(response));
+
+
+// # Global this
+console.log(window);
+console.log(globalThis);
