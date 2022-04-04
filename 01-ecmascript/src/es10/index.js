@@ -26,3 +26,8 @@ try {
 } catch {
   error
 }
+
+
+// # Object.fromEntries(): transforms key-value into an object
+let entries = [["name", "oscar"], ["age", 32]];
+console.log(Object.fromEntries(entries));
