@@ -42,3 +42,16 @@ class AnyClass {
   }
   { ... }
 }
+
+
+// # Logical AND, OR & nullish assignments
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+let isTrue = true;
+let isFalse = false;
+console.log(isTrue &&= isFalse);
+
+console.log(isTrue ||= isFalse);
+
+isTrue = undefined;
+
+console.log(isTrue ??= isFalse);
