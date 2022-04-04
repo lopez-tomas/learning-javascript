@@ -15,7 +15,15 @@
   "author": "Tomás López <lopeztomasenrique98@gmail.com>",
   "license": "MIT",
   "bin": {
-    "random-message": "./bin/global.js"
+    "random-message": "bin/global.js"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopez-tomas/learning-javascript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lopez-tomas/learning-javascript/issues"
+  },
+  "homepage": "https://github.com/lopez-tomas/learning-javascript#readme"
 }
