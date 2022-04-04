@@ -1,0 +1,16 @@
+{
+  "name": "02-asynchrony",
+  "version": "1.0.0",
+  "description": "Learning about Asynchrony in JavaScript",
+  "main": "src/index.js",
+  "scripts": {
+    "callback": "node src/callback/index.js"
+  },
+  "keywords": [
+    "callbacks",
+    "promises",
+    "async"
+  ],
+  "author": "",
+  "license": "MIT"
+}
