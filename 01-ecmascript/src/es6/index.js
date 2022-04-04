@@ -177,3 +177,20 @@ const helloImported = require('./module');
 // ES6 (Code Runner with Babel)
 //import hello from './module';
 console.log(helloImported());
+
+
+// # Generators: special function that return a certain value
+// according to the defined algorithm
+function* helloWorld() {
+  if (true) {
+    yield 'Hello, ';
+  }
+  if (true) {
+    yield 'World';
+  }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
