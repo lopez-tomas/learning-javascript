@@ -54,3 +54,31 @@ const anotherFunction = async () => {
 }
 
 anotherFunction();
+
+// Async Await example:
+const prepareIceCream = money => {
+  return new Promise((resolve, reject) => {
+    if (money >= 500) {
+      setTimeout(() => console.log('We are preparing your ice cream...'), 2000);
+
+      setTimeout(() => resolve('Here you are, a delicious ice cream!'), 6000);
+    } else {
+      setTimeout(() => reject('Sorry! You do not have enough money :('), 2000);
+    }
+  });
+}
+
+const buyIceCream = async money => {
+  try {
+    console.log('Welcome to Ice Cream World!');
+    const result = await prepareIceCream(money);
+
+    console.log(result);
+
+    console.log('Thanks for your purchase!');
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+buyIceCream(500);
