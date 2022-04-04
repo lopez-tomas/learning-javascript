@@ -12,5 +12,8 @@
     "package"
   ],
   "author": "Tomás López <lopeztomasenrique98@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.2"
+  }
 }
