@@ -17,7 +17,8 @@
     "moment": "^2.29.2"
   },
   "devDependencies": {
-    "date-fns": "^2.28.0"
+    "date-fns": "^2.28.0",
+    "webpack": "^5.71.0"
   },
   "optionalDependencies": {
     "eslint": "^8.12.0"
