@@ -8,3 +8,13 @@ console.log(array.flat(2)); // flat(deepness)
 let array = [1,2,3,4,5];
 
 console.log(array.flatMap(value => [value, value * 2]));
+
+
+// # Trim: eliminates white spaces in a string
+let hello = '      hello world';
+console.log(hello);
+console.log(hello.trimStart());
+
+let hello = 'hello world        ';
+console.log(hello);
+console.log(hello.trimEnd());
