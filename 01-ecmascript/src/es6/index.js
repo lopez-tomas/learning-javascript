@@ -194,3 +194,32 @@ const generatorHello = helloWorld();
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
+
+function* fibonacci() {
+  let first = 1;
+  let second = 1;
+
+  while (true) {
+    let current = second;
+    second = first;
+    first = first + current;
+    
+    let reset = yield current;
+    
+    if (reset) {
+      first = 1;
+      second = 1;
+    }
+  }
+};
+
+const secuence = fibonacci();
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
+console.log(secuence.next().value);
