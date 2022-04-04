@@ -5,6 +5,7 @@ const messages = [
   "It's raining! Let's go play!",
   "Pickle Riiiiiiiiiick!!!",
   "I'm Batman.",
+  "Today is a great day!",
 ];
 
 const randomMessage = () => {
