@@ -168,3 +168,12 @@ class Calculator {
 
 const calc = new Calculator();
 console.log(calc.add(2, 2));
+
+
+// # Export & Import
+// Before ES6 (Code Runner without Babel)
+const helloImported = require('./module');
+
+// ES6 (Code Runner with Babel)
+//import hello from './module';
+console.log(helloImported());
