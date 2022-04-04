@@ -41,8 +41,16 @@ helloWorld()
 // # Grouping Regex
 const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/
 const match = regexData.exec('2018-04-20');
-const year = match[1];
-const month = match[2];
-const day = match[3];
+const yearG = match[1];
+const monthG = match[2];
+const dayG = match[3];
+
+console.log(yearG, monthG, dayG);
+
+
+// # Regex naming
+const regexDataNamed = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/;
+const matchNamed = regexDataNamed.exec('2022-04-04');
+const { year, month, day } = matchNamed.groups;
 
 console.log(year, month, day);
