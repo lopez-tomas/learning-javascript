@@ -33,3 +33,12 @@ const promise3 = new Promise((resolve, reject) => resolve("3"));
 
 Promise.any([promise1, promise2, promise3])
   .then(response => console.log(response));
+
+
+// # Weak reference
+class AnyClass {
+  constructor(element) {
+    this.ref = new WeakRef(element);
+  }
+  { ... }
+}
