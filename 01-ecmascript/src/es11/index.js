@@ -35,3 +35,14 @@ console.log(fooo);
 
 const faaa = 'asd' ?? 'default string';
 console.log(faaa);
+
+
+// # Optional chaining
+const user = {};
+console.log(user?.profile?.email);
+
+if (user?.profile?.email) {
+  console.log(user.profile.email);
+} else {
+  console.log('fail');
+}
