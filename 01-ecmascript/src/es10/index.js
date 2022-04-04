@@ -31,3 +31,9 @@ try {
 // # Object.fromEntries(): transforms key-value into an object
 let entries = [["name", "oscar"], ["age", 32]];
 console.log(Object.fromEntries(entries));
+
+
+// # Type Symbol Object description
+let mySymbol = 'My Symbol';
+let symbol = Symbol(mySymbol);
+console.log(symbol.description);
