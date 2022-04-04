@@ -14,7 +14,7 @@
   "author": "Tomás López <lopeztomasenrique98@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "json-server": "^0.15.1",
+    "json-server": "^0.17.0",
     "moment": "^2.29.2"
   },
   "devDependencies": {
