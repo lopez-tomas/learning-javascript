@@ -18,3 +18,11 @@ console.log(hello.trimStart());
 let hello = 'hello world        ';
 console.log(hello);
 console.log(hello.trimEnd());
+
+
+// # Optional catch binding: error parameter now is optional
+try {
+  ///
+} catch {
+  error
+}
