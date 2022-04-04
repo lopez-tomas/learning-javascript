@@ -27,3 +27,11 @@ Promise.allSettled([promise1, promise2, promise3])
 // # Global this
 console.log(window);
 console.log(globalThis);
+
+
+// # Null operator
+const fooo = null ?? 'default string';
+console.log(fooo);
+
+const faaa = 'asd' ?? 'default string';
+console.log(faaa);
