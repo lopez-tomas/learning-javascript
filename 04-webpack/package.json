@@ -1,0 +1,22 @@
+{
+  "name": "04-webpack",
+  "version": "1.0.0",
+  "description": "Learning about Webpack",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "npm",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Tomás López <lopeztomasenrique98@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

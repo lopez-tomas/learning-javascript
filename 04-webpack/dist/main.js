@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("hello"),console.assert(2+2)})();
