@@ -21,9 +21,10 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i, // to use any .css file
+        test: /\.css|.styl$/i, // to use any .css file
         use: [MiniCssExtractPlugin.loader,
-        'css-loader'
+        'css-loader',
+        'stylus-loader'
         ],
       }
     ]
