@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-    assetModuleFilename: 'assets/images/[hash][ext][query]'
+    // assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
   resolve: {
     extensions: ['.js']
@@ -33,18 +33,25 @@ module.exports = {
         test: /\.png/, // to use any .png file
         type: 'asset/resource'
       },
-      { // Fonts
-        test: /\.(woff|woff2)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: "application/font-woff",
-            name: "[name].[ext]",
-            outputPath: "./assets/fonts/",
-            publicPath: "./assets/fonts/",
-            esModule: false,
-          },
+      // { // Fonts
+      //   test: /\.(woff|woff2)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //     options: {
+      //       limit: 10000,
+      //       mimetype: "application/font-woff",
+      //       name: "[name].[ext]",
+      //       outputPath: "./assets/fonts/",
+      //       publicPath: "./assets/fonts/",
+      //       esModule: false,
+      //     },
+      //   }
+      // },
+      { // Fonts - Webpack 5
+        test: /\.(woff|woff2)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[hash][ext][query]',
         }
       }
     ]
