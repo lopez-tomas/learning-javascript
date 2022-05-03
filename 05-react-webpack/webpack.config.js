@@ -41,8 +41,15 @@ module.exports = {
           'style-loader',
           'css-loader',
           'sass-loader'
-        ]
-      }
+        ], // if css files are not generated, used this...
+        /*
+        use: [
+          MiniCssExtractPluginloader,
+          'css-loader',
+          'sass-loader',
+        ],
+        */
+      },
     ]
   },
   plugins: [
