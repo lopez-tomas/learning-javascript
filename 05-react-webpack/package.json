@@ -18,7 +18,9 @@
     "webpack-dev-server": "^4.8.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "Tomás López <lopeztomasenrique98@gmail.com>",
