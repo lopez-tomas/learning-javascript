@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+
+#anagram-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  margin-top: 2rem;
+}
+#anagram-form .input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+#anagram-form .input-container .label {
+  width: 20%;
+}
+#anagram-form .input-container .input, #anagram-form .btn {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+#anagram-form .input-container .input:focus {
+  outline-width: thin;
+}
+#anagram-form .btn {
+  width: 50%;
+  border: 1px solid black;
+  align-self: center;
+  background-color: lime;
+}
+#anagram-form .btn:hover {
+  background-color: limegreen;
+}

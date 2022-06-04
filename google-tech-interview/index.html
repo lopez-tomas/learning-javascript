@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Tech Interview - JavaScript programmer</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>
+    Implement isAnagram () function, such that given two words it returns
+    TRUE if and only they are an isAnagram
+  </h1>
+  <h2>Anagram examples:</h2>
+  <p>Tom Sorvolo Ryddle / Soy Lord Voldemort</p>
+  <p>conservación / conversación</p>
+  <p>enfriamiento / refinamiento</p>
+
+  <form id="anagram-form">
+    <div class="input-container">
+      <label class="label" for="firstWord">First word:</label>
+      <input id="firstWord" class="input first-input" type="text" name="firstWord" placeholder="First word" required>
+    </div>
+
+    <div class="input-container">
+      <label class="label" for="secondWord">Second word:</label>
+      <input id="secondWord" class="input second-input" type="text" name="secondWord" placeholder="Second word" required>
+    </div>
+
+    <input class="btn submit-btn" type="submit" value="Check anagram" />
+  </form>
+
+  <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
