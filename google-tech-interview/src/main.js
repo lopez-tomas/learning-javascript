@@ -22,7 +22,8 @@ form.addEventListener('submit', (e) => {
     }
     clearInputs();
 });
-const sortWord = (word) => word.replaceAll(" ", "").toLowerCase().split("").sort().join("");
+const clearWord = (word) => word.replaceAll(" ", "").toLowerCase();
+const sortWord = (word) => clearWord(word).split("").sort().join("");
 const isAnagram = (word1, word2) => word1 === word2;
 const clearInputs = () => {
     firstWord.value = '';

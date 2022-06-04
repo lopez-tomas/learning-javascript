@@ -29,7 +29,9 @@ form.addEventListener('submit', (e) => {
   clearInputs();
 })
 
-const sortWord = (word: string): string => word.replaceAll(" ", "").toLowerCase().split("").sort().join("");
+const clearWord = (word: string): string => word.replaceAll(" ", "").toLowerCase();
+
+const sortWord = (word: string): string => clearWord(word).split("").sort().join("");
 
 const isAnagram = (word1: string, word2: string): boolean => word1 === word2;
 
