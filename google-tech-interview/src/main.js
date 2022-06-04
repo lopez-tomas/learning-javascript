@@ -9,12 +9,15 @@ const clearInputs = () => {
 const clearWord = (word) => word.replaceAll(" ", "").toLowerCase();
 const sortWord = (word) => clearWord(word).split("").sort().join("");
 const isAnagram = (word1, word2) => word1 === word2;
+const showResult = (answer) => {
+    result.innerHTML = answer;
+};
 // # O(n * log(n)) solution
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const answer = `"${firstWord.value}" and "${secondWord.value}" are`;
     if (firstWord.value === secondWord.value) {
-        result.innerHTML = ` NO! ${answer} NOT anagrams! They are the same!`;
+        showResult(` NO! ${answer} NOT anagrams! They are the same!`);
         clearInputs();
         return;
     }
@@ -22,10 +25,10 @@ form.addEventListener('submit', (e) => {
     const firstOrdered = sortWord(formData.get('firstWord'));
     const secondOrdered = sortWord(formData.get('secondWord'));
     if (isAnagram(firstOrdered, secondOrdered)) {
-        result.innerHTML = ` YES! ${answer} anagrams!`;
+        showResult(` YES! ${answer} anagrams!`);
     }
     else {
-        result.innerHTML = ` NO! ${answer} NOT anagrams!`;
+        showResult(` NO! ${answer} NOT anagrams!`);
     }
     clearInputs();
 });

@@ -14,6 +14,10 @@ const sortWord = (word: string): string => clearWord(word).split("").sort().join
 
 const isAnagram = (word1: string, word2: string): boolean => word1 === word2;
 
+const showResult = (answer: string): void => {
+  result.innerHTML = answer
+}
+
 
 // # O(n * log(n)) solution
 form.addEventListener('submit', (e) => {
@@ -22,7 +26,7 @@ form.addEventListener('submit', (e) => {
   const answer = `"${firstWord.value}" and "${secondWord.value}" are`;
 
   if (firstWord.value === secondWord.value) {
-    result.innerHTML = ` NO! ${answer} NOT anagrams! They are the same!`;
+    showResult(` NO! ${answer} NOT anagrams! They are the same!`);
     clearInputs();
 
     return;
@@ -33,9 +37,9 @@ form.addEventListener('submit', (e) => {
   const secondOrdered = sortWord((formData.get('secondWord') as string));
 
   if (isAnagram(firstOrdered, secondOrdered)) {
-    result.innerHTML = ` YES! ${answer} anagrams!` ;
+    showResult(` YES! ${answer} anagrams!`);
   } else {
-    result.innerHTML = ` NO! ${answer} NOT anagrams!`;
+    showResult(` NO! ${answer} NOT anagrams!`);
   }
 
   clearInputs();
