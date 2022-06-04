@@ -1,8 +1,15 @@
-// # O(n * log(n)) solution
 const form = document.getElementById('anagram-form');
 let firstWord = document.getElementById('firstWord');
 let secondWord = document.getElementById('secondWord');
 let result = document.querySelector('p#result span');
+const clearInputs = () => {
+    firstWord.value = '';
+    secondWord.value = '';
+};
+const clearWord = (word) => word.replaceAll(" ", "").toLowerCase();
+const sortWord = (word) => clearWord(word).split("").sort().join("");
+const isAnagram = (word1, word2) => word1 === word2;
+// # O(n * log(n)) solution
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const answer = `"${firstWord.value}" and "${secondWord.value}" are`;
@@ -22,10 +29,4 @@ form.addEventListener('submit', (e) => {
     }
     clearInputs();
 });
-const clearWord = (word) => word.replaceAll(" ", "").toLowerCase();
-const sortWord = (word) => clearWord(word).split("").sort().join("");
-const isAnagram = (word1, word2) => word1 === word2;
-const clearInputs = () => {
-    firstWord.value = '';
-    secondWord.value = '';
-};
+// # O(n) solution
