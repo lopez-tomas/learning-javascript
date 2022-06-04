@@ -8,8 +8,7 @@ form.addEventListener('submit', (e) => {
     const answer = `"${firstWord.value}" and "${secondWord.value}" are`;
     if (firstWord.value === secondWord.value) {
         result.innerHTML = ` NO! ${answer} NOT anagrams! They are the same!`;
-        firstWord.value = '';
-        secondWord.value = '';
+        clearInputs();
         return;
     }
     const formData = new FormData(form);
@@ -21,8 +20,11 @@ form.addEventListener('submit', (e) => {
     else {
         result.innerHTML = ` NO! ${answer} NOT anagrams!`;
     }
-    firstWord.value = '';
-    secondWord.value = '';
+    clearInputs();
 });
 const sortWord = (word) => word.replaceAll(" ", "").toLowerCase().split("").sort().join("");
 const isAnagram = (word1, word2) => word1 === word2;
+const clearInputs = () => {
+    firstWord.value = '';
+    secondWord.value = '';
+};
