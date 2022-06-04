@@ -5,10 +5,16 @@ let secondWord = document.getElementById('secondWord');
 let result = document.querySelector('p#result span');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const answer = `"${firstWord.value}" and "${secondWord.value}" are`;
+    if (firstWord.value === secondWord.value) {
+        result.innerHTML = ` NO! ${answer} NOT anagrams! They are the same!`;
+        firstWord.value = '';
+        secondWord.value = '';
+        return;
+    }
     const formData = new FormData(form);
     const firstOrdered = sortWord(formData.get('firstWord'));
     const secondOrdered = sortWord(formData.get('secondWord'));
-    const answer = `"${firstWord.value}" and "${secondWord.value}" are`;
     if (isAnagram(firstOrdered, secondOrdered)) {
         result.innerHTML = ` YES! ${answer} anagrams!`;
     }
